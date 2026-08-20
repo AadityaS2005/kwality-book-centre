@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Catalog | Kwality Book Centre — School, UPSC, SSC Books · New Delhi</title>
+  <meta name="description" content="Browse the full book catalog at Kwality Book Centre, Lodhi Colony, New Delhi. School books, UPSC, SSC, Banking, JEE, NEET, stationery. Click any book to order on WhatsApp." />
+  <meta name="keywords" content="book catalog Delhi, UPSC books Lodhi Colony, SSC books New Delhi, school books NCERT Delhi, stationery shop Delhi, Kwality Book Centre catalog" />
+  <link rel="canonical" href="https://kwalitybookcentre.in/books.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div id="scrollProgress" role="progressbar"></div>
+
+<!-- Search Overlay -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+  <div class="search-overlay-inner">
+    <div class="search-box">
+      <span class="search-icon-left">🔍</span>
+      <input type="search" class="search-input" id="searchInput" placeholder="Search books, authors, subjects…" autocomplete="off" />
+    </div>
+    <div class="search-results" id="searchResults"><p class="search-hint">Start typing to search…</p></div>
+  </div>
+</div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-info">
+      <span class="top-info-item">📍 7, Lodhi Rd, Meharchand Market, Lodhi Colony, New Delhi – 110003</span>
+      <span class="top-info-item">📞 <a href="tel:+919582262883">095822 62883</a></span>
+      <span class="top-info-item">⏰ Mon–Sat 9AM–8PM</span>
+    </div>
+    <div class="top-social">
+      <a href="https://wa.me/919582262883" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+      <a href="https://instagram.com/kwalitybookcentre" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Primary navigation">
+  <div class="container" style="display:flex;align-items:center;height:68px;gap:1.5rem;">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">K</div>
+      <div class="nav-title"><div class="name">Kwality Book Centre</div><div class="tag">Lodhi Colony · New Delhi</div></div>
+    </a>
+    <ul class="nav-links" id="primaryNav" style="display:flex;" role="list">
+      <li><a class="nav-link"        href="index.html">Home</a></li>
+      <li><a class="nav-link active" href="books.html" aria-current="page">Books</a></li>
+      <li><a class="nav-link"        href="about.html">About</a></li>
+      <li><a class="nav-link"        href="services.html">Services</a></li>
+      <li><a class="nav-link"        href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn-icon open-search" aria-label="Search">🔍</button>
+      <button class="nav-btn-icon theme-toggle" aria-label="Toggle theme">🌙</button>
+      <span class="nav-btn-icon" aria-label="Saved books">💜 <span class="nav-badge wishlist-count" style="display:none;">0</span></span>
+      <a class="btn btn-gold btn-sm" href="tel:+919582262883">📞 Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero" aria-labelledby="catalog-h1">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep"> › </span><span aria-current="page">Book Catalog</span>
+    </nav>
+    <h1 id="catalog-h1">Full Book Catalog</h1>
+    <p>18+ books available in store across UPSC, SSC, School, and Stationery. Click any book to <strong style="color:var(--gold)">enquire on WhatsApp</strong> instantly.</p>
+  </div>
+</section>
+
+<main id="main">
+  <section class="section-pad">
+    <div class="container">
+
+      <!-- Catalog Controls -->
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
+        <div style="flex:1;">
+          <div class="cat-filter" role="tablist" aria-label="Filter by category">
+            <button class="cat-btn active" data-cat="all"        role="tab">📚 All (<span id="countAll">18</span>)</button>
+            <button class="cat-btn"        data-cat="upsc"       role="tab">🎯 UPSC/Civil</button>
+            <button class="cat-btn"        data-cat="ssc"        role="tab">📊 SSC/Banking</button>
+            <button class="cat-btn"        data-cat="school"     role="tab">🏫 School</button>
+            <button class="cat-btn"        data-cat="stationery" role="tab">✏️ Stationery</button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.85rem;white-space:nowrap;">
+          <span id="resultsCount">Showing 18 books</span>
+        </div>
+      </div>
+
+      <!-- Wishlist Banner (shows if wishlist has items) -->
+      <div id="wishlistBanner" style="display:none;background:var(--purple-pale);border:1px solid rgba(124,58,237,.25);border-radius:var(--radius-lg);padding:1rem 1.5rem;margin-bottom:2rem;display:none;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <span style="font-size:1.1rem;">💜</span>
+        <div style="flex:1;"><strong style="color:var(--purple);">Your Wishlist</strong> <span id="wishlistCountText" style="color:var(--muted);font-size:.88rem;"></span></div>
+        <a href="https://wa.me/919582262883?text=Hi!%20I%20want%20to%20enquire%20about%20my%20wishlist%20books%20at%20Kwality%20Book%20Centre." target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background:var(--purple);color:#fff;">💬 Enquire Wishlist on WhatsApp</a>
+      </div>
+
+      <!-- Book Grid -->
+      <div class="books-grid" id="booksGrid" role="list" aria-label="Full book catalog">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" style="display:none;text-align:center;padding:4rem 2rem;">
+        <p style="font-size:2.5rem;margin-bottom:1rem;">📭</p>
+        <p style="color:var(--muted);font-size:1rem;">No books found in this category.</p>
+        <p style="color:var(--muted-2);font-size:.88rem;margin-top:.5rem;">Try a different filter or <a href="https://wa.me/919582262883" target="_blank" rel="noopener noreferrer" style="color:var(--royal-mid);">WhatsApp us</a> to check stock.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="newsletter-section" style="background:var(--royal);" aria-label="Call to action">
+    <div class="container">
+      <div class="newsletter-inner" style="justify-content:center;text-align:center;">
+        <div class="newsletter-text">
+          <h2 style="color:#fff;">Don't see the book you need?</h2>
+          <p style="color:rgba(255,255,255,.75);">WhatsApp us the title &amp; author — we'll check stock or order it for you!</p>
+          <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap;">
+            <a href="https://wa.me/919582262883?text=Hi!%20I%20am%20looking%20for%20a%20specific%20book%20at%20Kwality%20Book%20Centre." target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">💬 WhatsApp Book Request</a>
+            <a href="tel:+919582262883" class="btn btn-ghost btn-lg">📞 Call 095822 62883</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="nav-brand" style="margin-bottom:1rem;">
+          <div class="nav-logo">K</div>
+          <div class="nav-title"><div class="footer-brand-name">Kwality Book Centre</div><div class="footer-brand-tag">Knowledge · Quality · Service</div></div>
+        </div>
+        <p class="footer-desc">South Delhi's trusted bookstore since 2005. School books, competitive exam books, stationery &amp; binding at Meharchand Market, Lodhi Colony, New Delhi.</p>
+      </div>
+      <nav aria-label="Quick links"><h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="books.html">📚 Books</a></li>
+          <li><a href="about.html">ℹ️ About</a></li>
+          <li><a href="services.html">🛠️ Services</a></li>
+          <li><a href="contact.html">📞 Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Book categories"><h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="books.html?cat=school">🏫 School Books</a></li>
+          <li><a href="books.html?cat=upsc">🎯 UPSC Books</a></li>
+          <li><a href="books.html?cat=ssc">📊 SSC Books</a></li>
+          <li><a href="books.html?cat=stationery">✏️ Stationery</a></li>
+        </ul>
+      </nav>
+      <address>
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><span class="fi">📍</span><span>7, Lodhi Rd, Meharchand Market, Lodhi Colony, New Delhi – 110003</span></li>
+          <li><span class="fi">📞</span><a href="tel:+919582262883">095822 62883</a></li>
+          <li><span class="fi">⏰</span><span>Mon–Sat 9AM–8PM · Sun 10AM–2PM</span></li>
+        </ul>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 Kwality Book Centre, New Delhi.</p>
+      <ul class="footer-bottom-links"><li><a href="sitemap.xml">Sitemap</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919582262883" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+<button id="backToTop" aria-label="Back to top">▲</button>
+<div class="toast-container" aria-live="polite"></div>
+
+<script src="js/books-data.js"></script>
+<script>
+// Books page extras
+document.addEventListener('DOMContentLoaded', () => {
+  // Show wishlist banner if items exist
+  const wl = JSON.parse(localStorage.getItem('kbc_wishlist') || '[]');
+  const banner = document.getElementById('wishlistBanner');
+  const wlText = document.getElementById('wishlistCountText');
+  if (wl.length > 0 && banner) {
+    banner.style.display = 'flex';
+    if (wlText) wlText.textContent = `${wl.length} book${wl.length>1?'s':''} saved`;
+  }
+
+  // Update results count after render
+  const origFilter = window.initCategoryFilter;
+  const grid = document.getElementById('booksGrid');
+  const countEl = document.getElementById('resultsCount');
+  const emptyEl = document.getElementById('emptyState');
+  const allCount = document.getElementById('countAll');
+  if (allCount && typeof BOOKS !== 'undefined') allCount.textContent = BOOKS.length;
+
+  // URL param filter
+  const params = new URLSearchParams(location.search);
+  const paramCat = params.get('cat');
+  if (paramCat) {
+    const btn = document.querySelector(`.cat-btn[data-cat="${paramCat}"]`);
+    if (btn) { document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  }
+});
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

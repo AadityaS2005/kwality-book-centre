@@ -1,0 +1,34 @@
+# robots.txt — Kwality Book Centre
+# Website: https://kwalitybookcentre.in
+# Contact: info@kwalitybookcentre.in
+
+# Allow all major search engine crawlers
+User-agent: *
+Allow: /
+
+# Allow Google's specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Disallow private or admin paths (add these if you create them)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# XML Sitemap location — critical for search engine discovery
+Sitemap: https://kwalitybookcentre.in/sitemap.xml
+
+# Host declaration
+Host: https://kwalitybookcentre.in
