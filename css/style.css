@@ -209,11 +209,11 @@ button { font-family:inherit; cursor:pointer; }
 }
 [data-theme="dark"] .navbar { background:rgba(13,17,23,.95); border-color:rgba(255,255,255,.06); }
 .navbar .container { display:flex; align-items:center; height:68px; gap:1.5rem; }
-.nav-brand { display:flex; align-items:center; gap:.8rem; text-decoration:none; flex-shrink:0; }
+.nav-brand { display:flex; align-items:center; gap:.85rem; text-decoration:none; flex-shrink:0; }
 .nav-logo { width:42px; height:42px; border-radius:10px; background:linear-gradient(135deg,var(--gold),var(--gold-dark)); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:800; font-size:1.2rem; color:var(--ink); letter-spacing:-.02em; flex-shrink:0; }
-.nav-title { line-height:1; }
-.nav-title .name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:#fff; }
-.nav-title .tag  { font-size:.62rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.08em; }
+.nav-title { display:flex; flex-direction:column; justify-content:center; }
+.nav-title .name { font-family:'Playfair Display',serif; font-size:1.08rem; font-weight:700; color:#fff; line-height:1.2; white-space:nowrap; }
+.nav-title .tag  { font-size:.62rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.08em; line-height:1.1; margin-top:3px; white-space:nowrap; }
 
 .nav-links { display:flex; align-items:center; gap:.1rem; margin-left:auto; }
 .nav-link { padding:.5rem .95rem; color:rgba(255,255,255,.75); font-size:.88rem; font-weight:500; border-radius:8px; transition:all .2s; white-space:nowrap; position:relative; text-decoration:none; }
@@ -681,7 +681,7 @@ button { font-family:inherit; cursor:pointer; }
   .calc-grid   { grid-template-columns:1fr; }
   .location-grid { grid-template-columns:1fr; }
 }
-@media(max-width:768px) {
+@media(max-width:960px) {
   .hamburger { display:flex; }
   .nav-links { position:fixed; top:68px; left:0; right:0; background:var(--ink-soft); flex-direction:column; gap:0; padding:.75rem; box-shadow:var(--shadow-lg); transform:translateY(-110%); transition:transform .3s var(--ease); z-index:999; }
   .nav-links.open { transform:translateY(0); }
